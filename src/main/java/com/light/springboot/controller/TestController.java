@@ -15,9 +15,5 @@ public class TestController {
         return "helloworld";
     }
 
-    @RequestMapping("/helloworld2")
-    public String helloworld2() {
-        return "helloworld2";
-    }
 
 }
