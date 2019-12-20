@@ -25,3 +25,8 @@
 hs_err_pid*
 
 /src/main/resources/rebel.xml
+/springboot.iml
+src/main/resources/static/
+src/main/resources/templates/
+src/test/
+target/generated-sources/
