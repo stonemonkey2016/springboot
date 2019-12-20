@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @RequestMapping("/helloworld")
-    public String helloworld(){
+    public String helloworld() {
         return "helloworld";
     }
 
     @RequestMapping("/helloworld2")
-    public String helloworld2(){
+    public String helloworld2() {
         return "helloworld2";
     }
 
