@@ -4,19 +4,19 @@
     <property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n" />
     <!-- test文件路径 -->
 <!--    <property name="TEST_FILE_PATH" value="d:/test.log" />-->
-    <property name="TEST_FILE_PATH" value="D:/tab/1_ideaIU-2019.1.3/3_WS/springboot/springboot/test.log" />
+    <property name="TEST_FILE_PATH" value="D:/tab/1_ideaIU-2019.1.3/3_WS/springboot/springboot/logback/test.log" />
     <!-- pro文件路径 -->
-    <property name="PRO_FILE_PATH" value="/opt/test/log" />
+    <property name="PRO_FILE_PATH" value="/opt/test/logback" />
 
     <!-- 开发环境 -->
     <springProfile name="dev">
-        <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-            <encode>
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
                 <pattern>${PATTERN}</pattern>
-            </encode>
+            </encoder>
         </appender>
         <logger name="com.light.springboot" level="debug"/>
-        <root name="info">
+        <root level="info">
             <appender-ref ref="CONSOLE"/>
         </root>
     </springProfile>

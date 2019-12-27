@@ -10,9 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+    /** 
+     * @Desc:   
+     * @Param:  [] 
+     * @Return: java.lang.String
+     * @Author: bubbles
+     * @Date:   2019/12/25 10:25
+     **/
     @RequestMapping("/helloworld")
     public String helloworld() {
         return "helloworld";
+    }
+
+    /** 
+     * @Desc:   
+     * @Param:  []
+     * @Return: java.lang.String
+     * @Author: bubbles
+     * @Date:   2019/12/27 14:54
+     **/
+    @RequestMapping("/helloworld2")
+    public String helloworld2() {
+        return "helloworld2";
     }
 
 
