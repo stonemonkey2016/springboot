@@ -1,22 +1,14 @@
 package com.light.springboot;
 
-import com.light.springboot.configure.DataSourceProperties;
-import com.light.springboot.configure.EncodingConvertor;
-import com.light.springboot.interceptor.ListenerTest;
-import com.light.springboot.interceptor.ServletTest;
-import com.light.springboot.interceptor.TimeFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.scheduling.annotation.EnableScheduling;
 
-import javax.servlet.DispatcherType;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import java.util.EnumSet;
-import java.util.Map;
 
 /**
  * @descrption:
@@ -26,10 +18,10 @@ import java.util.Map;
  */
 @SpringBootApplication
 //@EnableScheduling
-public class SpringbootApplication extends SpringBootServletInitializer {
+public class SpringbootApplication extends SpringBootServletInitializer implements ServletContextInitializer {
 
     /**
-     * @Desc:   让 SpringbootApplication 类继承 SpringBootServletInitializer 并重写 configure 方法
+     * @Desc:   打包成部署的 war 包,让 SpringbootApplication 类继承 SpringBootServletInitializer 并重写 configure 方法
      * @Param:  [builder]
      * @Return: org.springframework.boot.builder.SpringApplicationBuilder
      * @Author: bubbles
@@ -47,8 +39,8 @@ public class SpringbootApplication extends SpringBootServletInitializer {
      * @Author: bubbles
      * @Date:   2019/12/27 23:54
      **/
-    //@Override
-    //public void onStartup(ServletContext servletContext) throws ServletException{
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException{
     //    // 配置 Servlet
     //    servletContext.addServlet("servletTest", new ServletTest()).addMapping("/servletTest");
     //
@@ -58,7 +50,7 @@ public class SpringbootApplication extends SpringBootServletInitializer {
     //
     //    // 配置 Listener
     //    servletContext.addListener(new ListenerTest());
-    //}
+    }
 
     /** 
      * @Desc:   

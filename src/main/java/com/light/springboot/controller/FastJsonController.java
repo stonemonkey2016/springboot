@@ -1,6 +1,6 @@
 package com.light.springboot.controller;
 
-import com.light.springboot.entity.User;
+import com.light.springboot.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;

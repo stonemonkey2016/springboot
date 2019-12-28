@@ -1,4 +1,4 @@
-package com.light.springboot.entity;
+package com.light.springboot.domain;
 
 /**
  * @descrption:

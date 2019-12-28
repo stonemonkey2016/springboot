@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
+<!--    JdbcTemplate 如需打印日志，在日志配置文件中添加如下配置-->
+    <logger name="org.springframework.jdbc.core.JdbcTemplate" level="debug"/>
+
     <!-- 文件输出格式 -->
     <property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n" />
     <!-- test文件路径 -->

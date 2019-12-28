@@ -1,6 +1,6 @@
 package com.light.springboot.controller;
 
-import com.light.springboot.entity.FileInfo;
+import com.light.springboot.domain.FileInfo;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

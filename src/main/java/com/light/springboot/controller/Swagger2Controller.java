@@ -1,10 +1,9 @@
 package com.light.springboot.controller;
 
-import com.light.springboot.entity.User;
+import com.light.springboot.domain.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
