@@ -19,7 +19,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -32,7 +31,7 @@ import java.util.List;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    @Value("${ds.userName}")
+    @Value("${spring.datasource.username}")
     private String userName;
 
     @Autowired
@@ -42,8 +41,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     private TimeInterceptor timeInterceptor;
 
     public void show() {
-        System.out.println("ds.userName=" + this.userName);
-        System.out.println("ds.password=" + this.environment.getProperty("ds.password"));
+        System.out.println("spring.datasource.userName=" + this.userName);
+        System.out.println("spring.datasource.password=" + this.environment.getProperty("spring.datasource.password"));
+        System.out.println("spring.datasource.driver-class-name=" + this.environment.getProperty("spring.datasource.driver-class-name"));
     }
 
     /**

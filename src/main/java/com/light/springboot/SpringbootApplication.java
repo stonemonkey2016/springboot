@@ -1,5 +1,7 @@
 package com.light.springboot;
 
+import com.light.springboot.configure.DataSourceProperties;
+import com.light.springboot.configure.WebConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -61,7 +63,9 @@ public class SpringbootApplication extends SpringBootServletInitializer implemen
      **/
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(SpringbootApplication.class, args);
-        //context.getBean(DataSourceProperties.class).show();
+        context.getBean(DataSourceProperties.class).show();
+        System.out.println("=========================");
+        context.getBean(WebConfig.class).show();
         //System.out.println(System.getProperty("file.encoding"));
         //Map<String,EncodingConvertor> map = context.getBeansOfType(EncodingConvertor.class);
         //System.out.println(map);
