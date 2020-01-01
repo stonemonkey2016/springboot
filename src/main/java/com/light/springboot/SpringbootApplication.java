@@ -1,16 +1,16 @@
 package com.light.springboot;
 
-import com.light.springboot.configure.DataSourceProperties;
-import com.light.springboot.configure.WebConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+
 
 /**
  * @descrption:
@@ -19,6 +19,7 @@ import javax.servlet.ServletException;
  * @author: bubbles
  */
 @SpringBootApplication
+@EnableCaching               // 开启缓存功能
 //@EnableScheduling
 public class SpringbootApplication extends SpringBootServletInitializer implements ServletContextInitializer {
 
@@ -43,29 +44,31 @@ public class SpringbootApplication extends SpringBootServletInitializer implemen
      **/
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException{
-    //    // 配置 Servlet
-    //    servletContext.addServlet("servletTest", new ServletTest()).addMapping("/servletTest");
-    //
-    //    // 配置 Filter
-    //    servletContext.addFilter("timeFilter", new TimeFilter())
-    //            .addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/");
-    //
-    //    // 配置 Listener
-    //    servletContext.addListener(new ListenerTest());
+        //    // 配置 Servlet
+        //    servletContext.addServlet("servletTest", new ServletTest()).addMapping("/servletTest");
+        //
+        //    // 配置 Filter
+        //    servletContext.addFilter("timeFilter", new TimeFilter())
+        //            .addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/");
+        //
+        //    // 配置 Listener
+        //    servletContext.addListener(new ListenerTest());
     }
 
-    /** 
-     * @Desc:   
-     * @Param:  [args] 
+    /**
+     * @Desc:
+     * @Param:  [args]
      * @Return: void
      * @Author: bubbles
      * @Date:   2019/12/27 10:58
      **/
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(SpringbootApplication.class, args);
-        context.getBean(DataSourceProperties.class).show();
-        System.out.println("=========================");
-        context.getBean(WebConfig.class).show();
+
+        //context.getBean(DataSourceProperties.class).show();
+        //System.out.println("=========================");
+        //context.getBean(WebConfig.class).show();
+
         //System.out.println(System.getProperty("file.encoding"));
         //Map<String,EncodingConvertor> map = context.getBeansOfType(EncodingConvertor.class);
         //System.out.println(map);
