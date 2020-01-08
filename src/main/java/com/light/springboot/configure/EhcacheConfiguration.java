@@ -15,7 +15,7 @@ import org.springframework.core.io.ClassPathResource;
 import java.lang.reflect.Method;
 
 /**
- * @descrption:
+ * @descrption:将ehcache的管理器暴露给spring的上下文容器
  * @author: bubbles
  */
 @Configuration
@@ -31,7 +31,7 @@ public class EhcacheConfiguration implements CachingConfigurer {
     }
 
     /*
-     * 据shared与否的设置,Spring分别通过CacheManager.create() 或new
+     * 根据shared与否的设置,Spring分别通过CacheManager.create() 或new
      * CacheManager()方式来创建一个ehcache基地.
      */
     @Bean
